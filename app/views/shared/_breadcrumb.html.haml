@@ -1,0 +1,4 @@
+%ul.breadcrumb
+  - links.each do |link|
+    %li
+      = link_to link.first, link.last

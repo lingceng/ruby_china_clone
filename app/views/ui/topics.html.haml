@@ -1,0 +1,62 @@
+= render 'shared/breadcrumb', links: [["Home", ""], ["社区", ""]]
+
+%section#topics
+  %section#topics_info.box.box-gray.info-box
+    %span 查看： 默认
+  %ul.topics.box
+    %li.row
+      %a.col-md-1(href="")
+        %img(src="#{gravatar_url('joe@example.com')}")
+      %article.col-md-9
+        %p.topic_title
+          = link_to "DHH 的公开课"
+        %p.topic_info
+          = link_to "分享", nil, class: "node"
+          %span= "  •  "
+          = link_to "knwang", nil, class: "user_link"
+          %span= "  •  "
+          published 3 mintes ago
+      %p.replies.col-md-1
+        %span 12
+    %li.row
+      %a.col-md-1(href="")
+        %img(src="#{gravatar_url('joe@example.com')}")
+      %article.col-md-9
+        %p.topic_title
+          = link_to "Rails3 中 compass 的 IE 使用问题"
+        %p.topic_info
+          = link_to "分享", nil, class: "node"
+          %span= "  •  "
+          = link_to "knwang", nil, class: "user_link"
+          %span= "  •  "
+          last replied by
+          = link_to "knwang", nil, class: "user_link"
+          4 mintes ago
+      %p.replies.col-md-1
+        %span 12
+    %li.row
+      %a.col-md-1(href="")
+        %img(src="#{gravatar_url('joe@example.com')}")
+      %article.col-md-9
+        %p.topic_title
+          = link_to "这周二上海搞Ruby Tuesday么？"
+        %p.topic_info
+          = link_to "分享", nil, class: "node"
+          %span= "  •  "
+          = link_to "knwang", nil, class: "user_link"
+          %span= "  •  "
+          last replied by
+          = link_to "knwang", nil, class: "user_link"
+          8 mintes ago
+      %p.replies.col-md-1
+        %span 12
+
+
+%section#sidebar
+  %section.box
+    = link_to "发布新帖", nil, class: "btn btn-success"
+  %section#stats.box
+    %ul
+      %li 社区会员: 4029 人
+      %li 帖子数: 312 篇
+      %li 回帖数: 3123 条

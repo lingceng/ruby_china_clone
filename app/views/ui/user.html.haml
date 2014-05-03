@@ -1,0 +1,45 @@
+%section#user.box
+  %h1 个人信息
+  %img(src="#{gravatar_url('joe@example.com')}")
+  %dl
+    %dt.col-md-1 ID:
+    %dd
+      %strong chucai
+    %dt.col-md-1 Since:
+    %dd 2012年2月12日
+
+%section#user_recent_topics.box
+  %section#user_recent_topics_banner.box.info-box
+    %span 最近发布的帖子
+  %section#user_recent_topics_content.box
+    %ul
+      %li
+        = link_to "Rails", nil, class: "node"
+        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
+        %span 3 days ago
+      %li
+        = link_to "Rails", nil, class: "node"
+        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
+        %span 3 days ago
+      %li
+        = link_to "Rails", nil, class: "node"
+        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
+        %span 3 days ago
+
+%section#user_recent_replies.box
+  %section#user_recent_replies_banner.box.info-box
+    %span 最近回复的帖子
+  %section#user_recent_replies_content.box
+    %ul
+      %li
+        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
+        %span 3 days ago
+        %p 21号有
+      %li
+        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
+        %span 3 days ago
+        %p 21号有
+      %li
+        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
+        %span 3 days ago
+        %p 21号有

@@ -1,0 +1,25 @@
+= render 'shared/breadcrumb', links: [["Home", ""], ["社区", ""], ["发帖", ""]]
+
+%section#new_topic.box
+  %h1 新建帖子
+  %form(action="" method="post" class="form-horizontal")
+    .control-group
+      %label(class="control-label") 标题
+      .controls
+        %select
+          %option(value="Ruby") Ruby
+          %option(value="Rails") Rails
+          %option(value="XiaCheDan") XiaCheDan
+        %input(type="text")
+    .control-group
+      %label(class="control-label") 正文
+      .controls
+        %textarea(rows="20")
+    .submit-button
+      %input(type="submit" value="保存" class="btn btn-primary")
+      = link_to "取消"
+
+%section#sidebar
+  %section#new_post_note.box
+    %h2 发帖说明
+    %p 没啥可说的，发就是了

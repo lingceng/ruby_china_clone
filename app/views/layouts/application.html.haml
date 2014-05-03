@@ -1,0 +1,29 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %title A clone of ruby-china.org
+    = csrf_meta_tags
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = yield :head
+  %body
+    %header
+      %section.container
+        %h3
+          %a(href="/")
+            %img(src="/assets/text_logo.png")
+        %ul.span3
+          %li
+            = link_to "社区"
+          %li
+            = link_to "会员"
+        .dropdown
+          %a(class="dropdown-toggle" id="dlabel" role="button" data-toggle="dropdown" data-target="#" href="#")
+            = "lingceng"
+            %b.caret
+          %ul(class= "dropdown-menu" role="menu" aria-labelledby='dLabel')
+            %li
+              = link_to "退出"
+    %section.container
+      = yield
+    %footer

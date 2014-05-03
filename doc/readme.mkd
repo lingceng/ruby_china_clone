@@ -1,0 +1,20 @@
+# ruby china clone
+http://railscasts-china.com/episodes/kevin-open-class
+
+
+## postgresql
+https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-postgres
+
+    $ sudo apt-get install postgresql-9.1
+    $ su - root
+    # su - postgres
+    $ psql
+    postsql=# create role lingceng with createdb login password 'lingceng';
+    postsql=# select rolname from pg_roles;
+
+## setup
+    $ rails new ruby_china_clone --database=postgresql
+    $ rake db:setup
+    $ add gem "haml" to Gemfile and `bundle install`
+
+

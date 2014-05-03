@@ -1,0 +1,69 @@
+= render 'shared/breadcrumb', links: [["Home", ""], ["社区", ""], ["新手问题", ""], ["浏览帖子", ""]]
+
+%section#show_topic
+  %section#topic_banner.box.info-box
+    %h1 有没有熟悉人工智能的同学
+    %p.topic_info
+      = link_to "分享", nil, class: "node"
+      %span= "  •  "
+      = link_to "knwang", nil, class: "user_link"
+      %span= "  •  "
+      published 3 mintes ago
+  %section#topic_content.box
+    %p
+      这学期选了门AI的课。
+      %br
+      %br
+
+      本科生可以写一份8页的报告来赚点额外的分，因为对这个领域实在不太了解所以想求大神们给点方向和题目。
+      %br
+      %br
+
+      报告不长，大概的结构是这样的：
+      * 开头
+      **** 所用的领域和要解决的问题
+      * 解决方法
+      **** 找一下现有的解决方案
+      **** 比较一下这些解决方案（优缺点，scability，是否易用）
+      * 总结
+
+  %section#replies_banner.box.info-box
+    %span 共收到 5 条回复
+
+  %section#replies.box
+    %ul
+      %li
+        %a.span1(href="")
+          %img(src="#{gravatar_url('joe@example.com')}")
+        %article.span8
+          = link_to "knwang", nil, class: "user_link"
+          %span two hours ago
+          %p ++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。
+      %li
+        %a.span1(href="")
+          %img(src="#{gravatar_url('joe@example.com')}")
+        %article.span8
+          = link_to "knwang", nil, class: "user_link"
+          %span two hours ago
+          %p ++ -- 这个操作就是罪恶的源泉。。
+      %li
+        %a.span1(href="")
+          %img(src="#{gravatar_url('joe@example.com')}")
+        %article.span8
+          = link_to "knwang", nil, class: "user_link"
+          %span two hours ago
+          %p ++ -- 这个操作就是罪恶的源泉。。
+
+  %section#reply.box
+    %form(action="" method="post")
+      %textarea(rows="4")
+      %input(type="submit" class="btn btn-primary" value="提交回复")
+
+%section#sidebar
+  %section#new_topic.box
+    = link_to "发布新帖", nil, class: "btn btn-success"
+  %section#stats.box
+    %ul
+      %li 社区会员: 4029 人
+      %li 帖子数: 312 篇
+      %li 回帖数: 3123 条
