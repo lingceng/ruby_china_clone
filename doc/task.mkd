@@ -1,0 +1,61 @@
+# Task List
++  Visitor sees all topics 
+  - breadcrumb
+  - Only shows 'title' and 'published at'
+
++  Vistor sees topics with Nodes
+  - Only  three Nodes for now: Ruby, Rails and XiaCheDan
+  - Visitor sees Nodes with the list of topics
+
++  Vistor sees all topics within a Node
+  - Vistor clicks on a Node on the post list page and 
+    should see the list of topics
+
++  Vistor sees a topic
+  - Breadcrumb
+  - Title
+  - Node
+  - Published at
+  - content
+  
++  Vistor views a user 
+  - ID
+  - EMAIL
+  - Since
+
++  Vistor Register 
+  - ID
+  - EMAIL
+  
++  Vistor Signs in
+  After signed in, visitor should see:
+  - list of posts
+  - their own username on the top right
+
++  User publishes a new topic
+  - Node
+  - Title
+  - Content
+  
+  Press "Save" and goes to the topic index page
+
+  The index page should now have "posted by"
+  User show page should show "recenly published topics"
+  The content should support Markdown in topic show
+
++  User sees replies on a topic
+  - total replies
+  
+  for each replies:
+  - replier
+  - floor
+  - replied at
+  - reply content
+
++  User sees topic last replied by info
+  - last replied by in topic list
+
++  User replies to a topic     
+  user should be taken back to the topic
+  user should see the reply on the bottom
+  user should see their reply count
