@@ -33,23 +33,23 @@
   %section#replies.box
     %ul
       %li
-        %a.span1(href="")
+        %a.col-md-1(href="")
           %img(src="#{gravatar_url('joe@example.com')}")
-        %article.span8
+        %article.col-md-8
           = link_to "knwang", nil, class: "user_link"
           %span two hours ago
           %p ++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。
       %li
-        %a.span1(href="")
+        %a.col-md-1(href="")
           %img(src="#{gravatar_url('joe@example.com')}")
-        %article.span8
+        %article.col-md-8
           = link_to "knwang", nil, class: "user_link"
           %span two hours ago
           %p ++ -- 这个操作就是罪恶的源泉。。
       %li
-        %a.span1(href="")
+        %a.col-md-1(href="")
           %img(src="#{gravatar_url('joe@example.com')}")
-        %article.span8
+        %article.col-md-8
           = link_to "knwang", nil, class: "user_link"
           %span two hours ago
           %p ++ -- 这个操作就是罪恶的源泉。。
@@ -60,7 +60,7 @@
       %input(type="submit" class="btn btn-primary" value="提交回复")
 
 %section#sidebar
-  %section#new_topic.box
+  %section.box
     = link_to "发布新帖", nil, class: "btn btn-success"
   %section#stats.box
     %ul
