@@ -18,3 +18,9 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ add gem "haml" to Gemfile and `bundle install`
 
 
+    $ git remote add origin https://github.com/lingceng/ruby_china_clone.git
+    $ git push -u origin master
+
+    $ ssh -T git@github.com
+    $ git remote -v 
+    $ git remote set-url origin git@github.com:lingceng/ruby_china_clone.git 

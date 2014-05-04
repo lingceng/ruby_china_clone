@@ -10,6 +10,7 @@ RubyChinaClone::Application.routes.draw do
   get 'ui/(:action)', controller: 'ui'
 
   resources :topics, only: [:index]
+  resources :nodes, only: [:show]
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

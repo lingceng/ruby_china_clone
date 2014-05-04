@@ -3,22 +3,8 @@
 %section#topics
   %section#topics_info.box.box-gray.info-box
     %span 查看： 默认
-  %ul.topics.box
-    - @topics.each do |topic|
-      %li.row
-        %a.col-md-1(href="")
-          %img(src="#{gravatar_url('joe@example.com')}")
-        %article.col-md-9
-          %p.topic_title
-            = link_to topic.title 
-          %p.topic_info
-            = link_to "分享", nil, class: "node"
-            %span= "  •  "
-            = link_to "knwang", nil, class: "user_link"
-            %span= "  •  "
-            = "published #{time_ago_in_words(topic.created_at)} ago"
-        %p.replies.col-md-1
-          %span 12
+  = render partial: "shared/topics_list", locals: { topics: @topics }
+
 
 %section#sidebar
   %section.box
