@@ -47,3 +47,4 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
 ## rails command
     $ rails g migration create_user
     $ rake db:migrate
+
