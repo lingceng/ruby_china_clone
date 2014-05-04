@@ -24,3 +24,16 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ ssh -T git@github.com
     $ git remote -v 
     $ git remote set-url origin git@github.com:lingceng/ruby_china_clone.git 
+
+## heroku
+    $ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+    $ heroku login
+    $ heroku create
+    $ git push heroku master
+    $ heroku run rake db:migrate
+    $ heroku open
+    
+    group :production, :staging do
+      gem 'rails_12factor'
+    end
+
