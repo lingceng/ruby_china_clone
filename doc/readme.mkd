@@ -37,3 +37,9 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
       gem 'rails_12factor'
     end
 
+## rails-vim
+    # create nodes controller
+    :Rcontroller nodes!
+
+    # copy content from ui template
+    :Rview ui/topics.html.haml<ctrl-enter>

@@ -1,5 +1,5 @@
 
-= render 'shared/breadcrumb', links: [["Home", ""], ["社区", ""], ["Ruby", ""]]
+= render 'shared/breadcrumb', links: [["Home", "/"], ["社区", ""], [@node.name, node_path]]
 
 %section#node_topics
   %section#node_info.box.box-gray.info-box

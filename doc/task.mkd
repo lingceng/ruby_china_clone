@@ -1,6 +1,5 @@
 # Task List
 +  Visitor sees all topics 
-  - breadcrumb
   - Only shows 'title' and 'published at'
 
 +  Vistor sees topics with Nodes

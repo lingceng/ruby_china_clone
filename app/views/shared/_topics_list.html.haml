@@ -5,9 +5,9 @@
         %img(src="#{gravatar_url('joe@example.com')}")
       %article.col-md-9
         %p.topic_title
-          = link_to topic.title 
+          = link_to topic.title, topic_path(topic)
         %p.topic_info
-          = link_to "分享", nil, class: "node"
+          = link_to topic.node.name, node_path(topic.node), class: "node"
           %span= "  •  "
           = link_to "knwang", nil, class: "user_link"
           %span= "  •  "
