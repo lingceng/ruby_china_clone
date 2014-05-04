@@ -11,6 +11,7 @@ RubyChinaClone::Application.routes.draw do
 
   resources :topics, only: [:index, :show]
   resources :nodes, only: [:show]
+  resources :users, only: [:show]
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

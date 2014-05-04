@@ -9,7 +9,7 @@
         %p.topic_info
           = link_to topic.node.name, node_path(topic.node), class: "node"
           %span= "  •  "
-          = link_to "knwang", nil, class: "user_link"
+          = link_to topic.user.name, user_path(topic.user), class: "user_link"
           %span= "  •  "
           = "published #{time_ago_in_words(topic.created_at)} ago"
       %p.replies.col-md-1

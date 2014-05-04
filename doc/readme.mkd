@@ -43,3 +43,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
 
     # copy content from ui template
     :Rview ui/topics.html.haml<ctrl-enter>
+
+## rails command
+    $ rails g migration create_user
+    $ rake db:migrate
