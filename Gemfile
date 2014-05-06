@@ -35,6 +35,8 @@ gem 'haml'
 # twitter boostrap
 gem 'bootstrap-sass'
 
+# for markdown show
+gem 'rdiscount'
 
 
 group :doc do

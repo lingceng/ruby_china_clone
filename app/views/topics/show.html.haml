@@ -6,11 +6,12 @@
     %p.topic_info
       = link_to @topic.node.name, node_path(@topic.node), class: "node"
       %span= "  •  "
-      = link_to "knwang", nil, class: "user_link"
+      = link_to @topic.user.name, user_path(@topic.user), class: "user_link"
       %span= "  •  "
       published #{time_ago_in_words(@topic.created_at)} ago
   %section#topic_content.box
-    = @topic.content
+    :markdown
+      #{@topic.content}
 
   %section#replies_banner.box.info-box
     %span 共收到 5 条回复
@@ -44,11 +45,6 @@
       %textarea(rows="4")
       %input(type="submit" class="btn btn-primary" value="提交回复")
 
-%section#sidebar
-  %section.box
-    = link_to "发布新帖", nil, class: "btn btn-success"
-  %section#stats.box
-    %ul
-      %li 社区会员: 4029 人
-      %li 帖子数: 312 篇
-      %li 回帖数: 3123 条
+
+= render partial: "shared/sidebar"
+

@@ -8,11 +8,16 @@ RubyChinaClone::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'ui/(:action)', controller: 'ui'
+  get 'sign_up', to: "users#new"
+  get 'sign_in', to: "sessions#new"
 
 
-  resources :topics, only: [:index, :show]
+
+  resources :topics, only: [:index, :show, :new, :create]
   resources :nodes, only: [:show]
-  resources :users, only: [:show,  :new, :create]
+  resources :users, only: [:show,  :create]
+  resources :sessions, only: [ :create]
+  
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

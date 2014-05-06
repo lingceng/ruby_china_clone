@@ -15,18 +15,11 @@
     %span 最近发布的帖子
   %section#user_recent_topics_content.box
     %ul
-      %li
-        = link_to "Rails", nil, class: "node"
-        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
-        %span 3 days ago
-      %li
-        = link_to "Rails", nil, class: "node"
-        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
-        %span 3 days ago
-      %li
-        = link_to "Rails", nil, class: "node"
-        = link_to "BDD开发模式:使用Rspec开发Rails Project的标准流程是什么?"
-        %span 3 days ago
+      - @user.topics.each do |topic|
+        %li
+          = link_to topic.node.name, node_path(topic.node), class: "node"
+          = link_to topic.title, topic_path(topic)
+          %span= "published #{time_ago_in_words(topic.created_at)} ago"
 
 %section#user_recent_replies.box
   %section#user_recent_replies_banner.box.info-box

@@ -22,15 +22,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def sigin
+   
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      begin
         @user = User.find(params[:id])
-      rescue
-        logger.error "Attempt to access invalid user #{params[:id]}"
-        redirect_to root_path, :notice => 'Invalid user'
-      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
