@@ -10,13 +10,14 @@ RubyChinaClone::Application.routes.draw do
   get 'ui/(:action)', controller: 'ui'
   get 'sign_up', to: "users#new"
   get 'sign_in', to: "sessions#new"
+  get 'logout', to: "sessions#destroy"
 
 
 
   resources :topics, only: [:index, :show, :new, :create]
   resources :nodes, only: [:show]
   resources :users, only: [:show,  :create]
-  resources :sessions, only: [ :create]
+  resources :sessions, only: [ :create ]
   
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

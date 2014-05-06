@@ -3,6 +3,14 @@
 %section#new_user.box
   %h1 注册新用户
   = form_for @user, html: { class: "form-horizontal" } do |f|
+    - if @user.errors.any? 
+      %div#error_explanation
+        %h2=  "#{@user.errors.count} errors stop user to save:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg 
+
+
     .control-group
       = f.label :name, "用户名",  class: "control-label"
       .controls
@@ -17,4 +25,4 @@
 %section#sidebar
   %section#has_account.box
     %h2 已经有帐号了？
-    = link_to "登录"
+    = link_to "登录", sign_in_path

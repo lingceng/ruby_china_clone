@@ -3,6 +3,15 @@
 %section#new_topic.box
   %h1 新建帖子
   = form_for @topic, html: { class: "form-horizontal" } do |f|
+
+    - if @topic.errors.any? 
+      %div#error_explanation
+        %h2=  "#{@topic.errors.count} errors stop topic to save:"
+        %ul
+          - @topic.errors.full_messages.each do |msg|
+            %li= msg 
+
+
     .control-group
       = f.label :title, "标题",  class: "control-label"
       .controls
