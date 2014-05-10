@@ -18,6 +18,7 @@ RubyChinaClone::Application.routes.draw do
   resources :nodes, only: [:show]
   resources :users, only: [:show,  :create]
   resources :sessions, only: [ :create ]
+  resources :replies, only: [ :create ]
   
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

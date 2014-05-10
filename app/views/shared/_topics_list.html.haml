@@ -11,7 +11,14 @@
           %span= "  •  "
           = link_to topic.user.name, user_path(topic.user), class: "user_link"
           %span= "  •  "
-          = "published #{time_ago_in_words(topic.created_at)} ago"
+          - if topic.replies.empty?
+            = "published #{time_ago_in_words(topic.created_at)} ago"
+          - else
+            - last_replier = topic.replies.last.user
+            最后由 
+            #{ link_to topic.replies.last.user.name, user_path(topic.replies.last.user),  class: "user_link" } 
+            于#{ time_ago_in_words(topic.replies.last.created_at) }前回复
+
       %p.replies.col-md-1
-        %span 12
+        %span= topic.replies.count 
 

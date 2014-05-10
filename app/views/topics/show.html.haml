@@ -14,37 +14,25 @@
       #{@topic.content}
 
   %section#replies_banner.box.info-box
-    %span 共收到 5 条回复
+    %span 共收到 #{@topic.replies.count} 条回复
 
   %section#replies.box
     %ul
-      %li
-        %a.col-md-1(href="")
-          %img(src="#{gravatar_url('joe@example.com')}")
-        %article.col-md-8
-          = link_to "knwang", nil, class: "user_link"
-          %span two hours ago
-          %p ++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。++ -- 这个操作就是罪恶的源泉。。
-      %li
-        %a.col-md-1(href="")
-          %img(src="#{gravatar_url('joe@example.com')}")
-        %article.col-md-8
-          = link_to "knwang", nil, class: "user_link"
-          %span two hours ago
-          %p ++ -- 这个操作就是罪恶的源泉。。
-      %li
-        %a.col-md-1(href="")
-          %img(src="#{gravatar_url('joe@example.com')}")
-        %article.col-md-8
-          = link_to "knwang", nil, class: "user_link"
-          %span two hours ago
-          %p ++ -- 这个操作就是罪恶的源泉。。
-
+      - @topic.replies.each do |reply| 
+        %li
+          %a.col-md-1(href="")
+            %img(src="#{gravatar_url(reply.user.email)}")
+          %article.col-md-8
+            = link_to reply.user.name, user_path(reply.user), class: "user_link"
+            %span replied #{time_ago_in_words(reply.created_at)} ago
+            %p= reply.content
+       
   %section#reply.box
-    %form(action="" method="post")
-      %textarea(rows="4")
-      %input(type="submit" class="btn btn-primary" value="提交回复")
+    = form_tag replies_path, method: :post do
+      = text_area_tag :content, '', rows: 4
+      = text_field_tag :topic_id, @topic.id , type: 'hidden'
+      %input(type="submit" value="提交回复" class="btn btn-primary")
 
-
+   
 = render partial: "shared/sidebar"
 
