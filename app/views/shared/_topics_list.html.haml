@@ -2,7 +2,7 @@
   - topics.each do |topic|
     %li.row
       %a.col-md-1(href="")
-        %img(src="#{gravatar_url('joe@example.com')}")
+        %img(src="#{gravatar_url(topic.user.email)}")
       %article.col-md-9
         %p.topic_title
           = link_to topic.title, topic_path(topic)

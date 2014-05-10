@@ -1,6 +1,6 @@
 %section#user.box
   %h1 个人信息
-  %img(src="#{gravatar_url('joe@example.com')}")
+  %img(src="#{gravatar_url(@user.email)}")
   %dl
     %dt.col-md-1 ID:
     %dd

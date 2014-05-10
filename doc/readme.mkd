@@ -31,6 +31,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ heroku create
     $ git push heroku master
     $ heroku run rake db:migrate
+    $ heroku run rake db:seed
     $ heroku open
     
     group :production, :staging do
