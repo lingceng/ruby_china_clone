@@ -3,6 +3,6 @@
     = link_to "发布新帖", new_topic_path, class: "btn btn-success"
   %section#stats.box
     %ul
-      %li 社区会员: 4029 人
-      %li 帖子数: 312 篇
-      %li 回帖数: 3123 条
+      %li 社区会员: #{User.count} 人
+      %li 帖子数: #{Topic.count}  篇
+      %li 回帖数:  #{Reply.count} 条

@@ -26,15 +26,9 @@
     %span 最近回复的帖子
   %section#user_recent_replies_content.box
     %ul
-      %li
-        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
-        %span 3 days ago
-        %p 21号有
-      %li
-        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
-        %span 3 days ago
-        %p 21号有
-      %li
-        = link_to "[北京][2012年10月9日] 周二晚上8点小聚，有烤羊腿等着你"
-        %span 3 days ago
-        %p 21号有
+      - @user.replies.each do |reply|
+        %li
+          = link_to reply.topic.title, topic_path(reply.topic)
+          %span #{time_ago_in_words(reply.created_at)} ago
+          :markdown
+            #{reply.content}

@@ -25,7 +25,8 @@
           %article.col-md-8
             = link_to reply.user.name, user_path(reply.user), class: "user_link"
             %span replied #{time_ago_in_words(reply.created_at)} ago
-            %p= reply.content
+            :markdown
+              #{reply.content}
        
   %section#reply.box
     = form_tag replies_path, method: :post do
