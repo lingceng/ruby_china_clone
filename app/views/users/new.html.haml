@@ -1,11 +1,10 @@
-= render 'shared/breadcrumb', links: [["Home", ""]]
+= render 'shared/breadcrumb', links: [["Home", root_path]]
 
 %section#new_user.box
   %h1 注册新用户
   = form_for @user, html: { class: "form-horizontal" } do |f|
     - if @user.errors.any? 
       %div#error_explanation
-        %h2=  "#{@user.errors.count} errors stop user to save:"
         %ul
           - @user.errors.full_messages.each do |msg|
             %li= msg 
@@ -14,10 +13,16 @@
     .control-group
       = f.label :name, "用户名",  class: "control-label"
       .controls
-        = f.text_field :name
+        = f.text_field :name, placeholder: "foo"
+    .control-group
       = f.label :email, class: "control-label"
       .controls
         = f.text_field :email, placeholder: "foo@bar.com"
+    .control-group
+      = f.label :password, "密码", class: "control-label"
+      .controls
+        = f.password_field :password
+ 
 
     .submit-button
       %input(type="submit" value="提交注册信息" class="btn btn-primary")
