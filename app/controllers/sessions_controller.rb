@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if User.find_by(name: params[:username])
+    if User.authenticate(params[:username], params[:password])
       session[:username] = params[:username]
       redirect_to topics_path
     else
-      redirect_to sign_in_path
+      redirect_to sign_in_path, alert: "Username or password is not ok"
     end
   end
 

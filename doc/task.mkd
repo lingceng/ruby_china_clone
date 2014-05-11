@@ -63,3 +63,9 @@
   paginate the topic list 
   paginate the reply list
   
++  User login use password
+  give a admin reset password method
+  login use password
+  notice login fail
+
++  User register with password

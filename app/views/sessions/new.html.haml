@@ -1,4 +1,5 @@
 
+
 = render 'shared/breadcrumb', links: [["Home", root_path]]
 
 %section#sign_in.box
@@ -8,6 +9,11 @@
       = label_tag :username, "用户名", class: "control-label"
       .controls
         = text_field_tag :username
+    .control-group
+      = label_tag :password, "密码", class: "control-label"
+      .controls
+        = password_field_tag :password
+ 
     .submit-button
       %input(type="submit" value="登录" class="btn btn-primary")
 
