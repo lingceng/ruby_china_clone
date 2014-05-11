@@ -58,3 +58,8 @@
   user should be taken back to the topic
   user should see the reply on the bottom
   user should see their reply count
+
++  paginate
+  paginate the topic list 
+  paginate the reply list
+  

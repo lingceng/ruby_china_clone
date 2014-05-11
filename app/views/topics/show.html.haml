@@ -18,7 +18,8 @@
 
   %section#replies.box
     %ul
-      - @topic.replies.each do |reply| 
+      - current_replies = @topic.replies.paginate(page: params[:page], per_page: 10)
+      - current_replies.each do |reply| 
         %li
           %a.col-md-1(href="")
             %img(src="#{gravatar_url(reply.user.email)}")
@@ -27,7 +28,9 @@
             %span replied #{time_ago_in_words(reply.created_at)} ago
             :markdown
               #{reply.content}
-       
+
+    %div{style: 'margin: 0px 5px'}= will_paginate current_replies, renderer: BootstrapPagination::Rails, class: 'pull-right'       
+
   %section#reply.box
     = form_tag replies_path, method: :post do
       = text_area_tag :content, '', rows: 4

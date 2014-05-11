@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :check_signin, only: [:new, :create]
 
   def index
-    @topics = Topic.all   
+    @topics = Topic.paginate(page: params[:page], per_page: 10)
   end
 
   def show
