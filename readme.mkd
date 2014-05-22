@@ -88,4 +88,3 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     gem 'turbolinks'
     gem 'nprogress-rails'
 
-
