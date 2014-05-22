@@ -67,7 +67,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
 ## password
-   def self.authenticate(name, password) 
+    def self.authenticate(name, password) 
       if user = find_by(name: name)
         if user.hashed_password == encrypt_password(password, user.salt)
           user
@@ -84,5 +84,8 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     git show v1.0
     git push origin v1.0
 
+## use Turbolinks and NProgress 
+    gem 'turbolinks'
+    gem 'nprogress-rails'
 
 

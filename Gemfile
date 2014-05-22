@@ -42,6 +42,10 @@ gem 'rdiscount'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap', '~> 1.0.0'
 
+# nprogress
+# pajax or turbolinks load progress
+gem 'nprogress-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
