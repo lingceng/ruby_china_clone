@@ -27,6 +27,15 @@ class TopicsController < ApplicationController
     
   end
 
+
+  def preview
+    @body = params[:body]
+
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
     def topic_param
       params.require(:topic).permit(:title, :node_id, :content)

@@ -14,7 +14,12 @@ RubyChinaClone::Application.routes.draw do
 
 
 
-  resources :topics, only: [:index, :show, :new, :create]
+  resources :topics, only: [:index, :show, :new, :create] do
+    collection do
+      post :preview
+    end
+  end
+
   resources :nodes, only: [:show]
   resources :users, only: [:show,  :create]
   resources :sessions, only: [ :create ]

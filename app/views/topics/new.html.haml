@@ -11,19 +11,25 @@
           - @topic.errors.full_messages.each do |msg|
             %li= msg 
 
+    .form-group
+      .col-xs-2
+        = f.select :node_id, Node.all.collect { |n| [ n.name, n.id ] }, {}, class: "form-control"
+      .col-xs-10
+        = f.text_field :title, class: "form-control"
 
-    .control-group
-      = f.label :title, "标题",  class: "control-label"
-      .controls
-        = f.select :node_id, Node.all.collect { |n| [ n.name, n.id ] }
-        = f.text_field :title
-    .control-group
-      = f.label :content, "正文",  class: "control-label"
-      .controls
-        = f.text_area :content,  rows: 20
+
+    %ul#edit_tool.nav.nav-tabs
+      %li#edit_btn.active= link_to "编辑", "#edit_pane", data: { toggle: 'tab' }
+      %li#preview_btn= link_to "预览", "#preview_pane", data: { toggle: 'tab' }
+
+    .tab-content
+      #edit_pane.tab-pane.active
+        = f.text_area :content, rows: 20, class: "form-control"
+      #preview_pane.tab-pane
+        #preview_cnt.form-control
+
     .submit-button
-      %input(type="submit" value="保存" class="btn btn-primary")
-      = link_to "取消"
+      %input(type="submit" value="保存" class="btn btn-primary btn-lg")
 
 %section#sidebar
   %section#new_post_note.box
