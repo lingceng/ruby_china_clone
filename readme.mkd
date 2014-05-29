@@ -1,7 +1,8 @@
 # ruby china clone
-[Guide](http://railscasts-china.com/episodes/kevin-open-class)
+Implement features in RubyChina to Study
+[DEMO]( http://obscure-badlands-9175.herokuapp.com/) 
 
-[DEMO]( http://obscure-badlands-9175.herokuapp.com/)
+[Guide](http://railscasts-china.com/episodes/kevin-open-class)
 
 [Source]( https://github.com/lingceng/ruby_china_clone.git )
 
@@ -88,3 +89,4 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     gem 'turbolinks'
     gem 'nprogress-rails'
 
+## support emoji new topic

@@ -4,5 +4,8 @@ module ApplicationHelper
     "//www.gravatar.com/avatar/#{hash}?s=47"
   end
 
+  def format_content(content)
+    sanitize RailsEmoji.render(RDiscount.new(content).to_html)
+  end
 
 end

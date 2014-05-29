@@ -1,1 +1,1 @@
-json.body sanitize RDiscount.new(@body).to_html
+json.body format_content(@body)

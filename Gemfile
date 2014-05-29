@@ -46,6 +46,12 @@ gem 'will_paginate-bootstrap', '~> 1.0.0'
 # pajax or turbolinks load progress
 gem 'nprogress-rails'
 
+# to show emoji
+gem 'rails_emoji', '~> 1.7.1'
+
+# Github-like metions
+gem 'jquery-atwho-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

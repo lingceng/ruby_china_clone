@@ -10,8 +10,7 @@
       %span= "  •  "
       published #{time_ago_in_words(@topic.created_at)} ago
   %section#topic_content.box
-    :markdown
-      #{@topic.content}
+    = format_content @topic.content
 
   %section#replies_banner.box.info-box
     %span 共收到 #{@topic.replies.count} 条回复
@@ -26,8 +25,7 @@
           %article.col-md-8
             = link_to reply.user.name, user_path(reply.user), class: "user_link"
             %span replied #{time_ago_in_words(reply.created_at)} ago
-            :markdown
-              #{reply.content}
+            = format_content reply.content
 
     %div{style: 'margin: 0px 5px'}= will_paginate current_replies, renderer: BootstrapPagination::Rails, class: 'pull-right'       
 

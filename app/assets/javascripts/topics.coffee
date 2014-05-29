@@ -1,14 +1,28 @@
 # topics
 window.Topics =
   init: ->
+    content = $('#topic_content')
+
+    # bind preview function
     $('#preview_btn').click ->
-      Topics.preview($('#topic_content').val())
+      Topics.preview(content.val())
+
+    # emoji hint
+    emojis_list = $.map(window.EMOJI_LIST, (value, i) ->
+      { 'id': i, 'name': value }
+    )
+    console.log emojis_list
+    content.atwho(
+      at: ':',
+      tpl: "<li data-value=':${name}:'><img src='/assets/emojis/${name}.png' height='20' width='20'/> ${name} </li>",
+      data: emojis_list
+    )
 
 
   preview: (body) ->
     cnt = $("#preview_cnt")
 
-    $.post "/topics/preview", "body": body, 
+    $.post "/topics/preview", "body": body,
       (data) ->
         cnt.html(data.body)
       'json'
