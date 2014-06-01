@@ -18,7 +18,7 @@
         = f.text_field :title, class: "form-control"
 
 
-    %ul#edit_tool.nav.nav-tabs
+    %ul.nav.nav-tabs.mb10
       %li#edit_btn.active= link_to "编辑", "#edit_pane", data: { toggle: 'tab' }
       %li#preview_btn= link_to "预览", "#preview_pane", data: { toggle: 'tab' }
 
@@ -28,12 +28,11 @@
       #preview_pane.tab-pane
         #preview_cnt.form-control
 
-    .submit-button
+    .mt10
       %input(type="submit" value="保存" class="btn btn-primary btn-lg")
 
 %section#sidebar
   %section#new_post_note.box
     %h2 发帖说明
-    %p 支持 <a href="http://assemble.io/docs/Cheatsheet-Markdown.html" target="_blank" rel="nofollow">Markdown</a> 格式, <strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code>
-    %p 支持表情，见 <a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a>，输入<code>:</code>就会有提示哦～
-
+    = render "content_tip"
+ 

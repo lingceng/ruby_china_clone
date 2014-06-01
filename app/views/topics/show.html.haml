@@ -30,11 +30,23 @@
     %div{style: 'margin: 0px 5px'}= will_paginate current_replies, renderer: BootstrapPagination::Rails, class: 'pull-right'       
 
   %section#reply.box
-    = form_tag replies_path, method: :post do
-      = text_area_tag :content, '', rows: 4
+    = form_tag replies_path, method: :post, html: { class: "form-horizontal" } do
       = text_field_tag :topic_id, @topic.id , type: 'hidden'
-      %input(type="submit" value="提交回复" class="btn btn-primary")
 
-   
+      %ul.nav.nav-tabs.mb10
+        %li#edit_btn.active= link_to "编辑", "#edit_pane", data: { toggle: 'tab' }
+        %li#preview_btn= link_to "预览", "#preview_pane", data: { toggle: 'tab' }
+
+      .tab-content
+        #edit_pane.tab-pane.active
+          = text_area_tag :content, '', rows: 4, class: "form-control"
+        #preview_pane.tab-pane
+          #preview_cnt.form-control
+
+      .mt10
+        %input(type="submit" value="提交回复" class="btn btn-primary")
+      .mt10
+        = render "content_tip"
+           
 = render partial: "shared/sidebar"
 

@@ -1,7 +1,7 @@
 # topics
 window.Topics =
   init: ->
-    content = $('#topic_content')
+    content = $('#edit_pane textarea')
 
     # bind preview function
     $('#preview_btn').click ->
@@ -11,7 +11,6 @@ window.Topics =
     emojis_list = $.map(window.EMOJI_LIST, (value, i) ->
       { 'id': i, 'name': value }
     )
-    console.log emojis_list
     content.atwho(
       at: ':',
       tpl: "<li data-value=':${name}:'><img src='/assets/emojis/${name}.png' height='20' width='20'/> ${name} </li>",
