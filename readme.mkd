@@ -88,5 +88,20 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
 ## use Turbolinks and NProgress 
     gem 'turbolinks'
     gem 'nprogress-rails'
+    gem 'jquery-turbolinks'
+
+    //= require jquery
+    //= require jquery.turbolinks
+    //= require jquery_ujs
 
 ## support emoji new topic
+  The default matcher for compiling files includes application.js, application.css and all non-JS/CSS files (this will include all image assets automatically) from app/assets folders 
+
+procompile asset pipeline locally
+config/environments/development.rb
+    config.assets.prefix = "/dev-assets"
+    # precompile
+    $rake assets:precompile
+    # to totally clean
+    $ rake assets:clobber
+
