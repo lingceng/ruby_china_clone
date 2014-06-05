@@ -31,7 +31,10 @@
 
       - if flash[:alert]
         = content_tag :div, flash[:alert], class: "alert alert-warning" 
-
-
       = yield
-    %footer
+
+    %footer.container
+      %p
+        %a{href: "https://github.com/lingceng/ruby_china_clone"}Source on GitHub
+      %p 
+        这里是<a href="https://ruby-china.org">RubyChina</a>的简单实现

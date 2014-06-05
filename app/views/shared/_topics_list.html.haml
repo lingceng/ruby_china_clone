@@ -22,6 +22,6 @@
       %p.replies.col-md-1
         %span= topic.replies.count 
 
-= will_paginate topics, renderer: BootstrapPagination::Rails, class: 'pull-right'       
+%div{style: 'margin: 0px 5px; height:60px'}= will_paginate topics, renderer: BootstrapPagination::Rails, class: 'pull-right'
 
 
