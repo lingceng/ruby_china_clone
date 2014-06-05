@@ -69,3 +69,9 @@
   notice login fail
 
 +  User register with password
+
++ reply support emoji
+
++ store user id in session
+  not use user name
+  know the ctags vim plugin
