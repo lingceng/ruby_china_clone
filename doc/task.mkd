@@ -72,6 +72,9 @@
 
 + reply support emoji
 
-+ store user id in session
++ store user id in session [no]
   not use user name
   know the ctags vim plugin
+  
++ clean the bread and other no need things
+

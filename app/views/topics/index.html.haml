@@ -1,8 +1,6 @@
-= render 'shared/breadcrumb', links: [["Home", "/"], ["社区", ""]]
-
 %section#topics
   %section#topics_info.box.box-gray.info-box
-    %span 查看： 默认
+    %span 查看： 所有 
   = render partial: "shared/topics_list", locals: { topics: @topics }
 
 

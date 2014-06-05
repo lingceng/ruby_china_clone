@@ -1,12 +1,9 @@
-
-= render 'shared/breadcrumb', links: [["Home", "/"], ["社区", ""], [@node.name, node_path]]
-
 %section#node_topics
   %section#node_info.box.box-gray.info-box
     %h2= @node.name
     %span 共有#{@node.topics.count}个讨论主题
     %p= @node.description
-  = render partial: "shared/topics_list", locals: { topics: @node.topics }
+  = render partial: "shared/topics_list", locals: { topics: @node.topics.paginate(page: params[:page], per_page: 10) }
   
 %section#sidebar
   %section.box
