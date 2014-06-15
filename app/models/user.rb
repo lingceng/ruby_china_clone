@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :replies
 
   validates :name, :email,  presence: true, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
+        message: "must be an email address" }
   validate :password_must_be_present
  
   def self.authenticate(name, password) 

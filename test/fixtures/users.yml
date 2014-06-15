@@ -1,0 +1,8 @@
+<% SALT = "LING" unless defined?(SALT) %>
+
+one:
+  name: dave
+  email: dave@gmail.com
+  hashed_password: <%= User.encrypt_password('secret', SALT) %>
+  salt: <%= SALT %>
+
