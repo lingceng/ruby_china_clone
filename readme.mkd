@@ -7,10 +7,32 @@ Implement features in RubyChina to Study
 
 [Source]( https://github.com/lingceng/ruby_china_clone.git )
 
+# setup
+  # install postgresql if hava not installed
+  $ gem install bundler
+
+  $ sudo apt-get install libpq-dev
+  $ gem install pg
+  $ bundle install
+  
+  $ sudo apt-get install nodejs
+
+  # edit `pg_hba.conf'
+  # local all postgres md5
+  $ rake db:setup
+
+  $ rails s
+
+
 ## postgresql
 https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-postgres
 
-    $ sudo apt-get install postgresql-9.1
+    $ sudo apt-get install postgresql
+    
+    # optional set root password
+    $ sudo passwd
+
+    # change from root and to postgres
     $ su - root
     # su - postgres
     $ psql
