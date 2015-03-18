@@ -1,7 +1,7 @@
 # ruby china clone
 Implement features in RubyChina to Study
 
-[DEMO]( http://obscure-badlands-9175.herokuapp.com/) 
+[DEMO]( http://ruby-china-clone.herokuapp.com/)
 
 [Guide](http://railscasts-china.com/episodes/kevin-open-class)
 
@@ -14,7 +14,7 @@ Implement features in RubyChina to Study
   $ sudo apt-get install libpq-dev
   $ gem install pg
   $ bundle install
-  
+
   $ sudo apt-get install nodejs
 
   # edit `pg_hba.conf'
@@ -28,7 +28,7 @@ Implement features in RubyChina to Study
 https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-postgres
 
     $ sudo apt-get install postgresql
-    
+
     # optional set root password
     $ sudo passwd
 
@@ -49,8 +49,8 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ git push -u origin master
 
     $ ssh -T git@github.com
-    $ git remote -v 
-    $ git remote set-url origin git@github.com:lingceng/ruby_china_clone.git 
+    $ git remote -v
+    $ git remote set-url origin git@github.com:lingceng/ruby_china_clone.git
 
 ## heroku
     $ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
@@ -60,16 +60,16 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ heroku run rake db:migrate
     $ heroku run rake db:seed
     $ heroku open
-    
+
     group :production, :staging do
       gem 'rails_12factor'
     end
-    
+
 
 ## rails-vim
     # create nodes controller
     :Rcontroller nodes!
-    
+
     # go to view
     :Rview nodes
 
@@ -91,7 +91,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
 ## password
-    def self.authenticate(name, password) 
+    def self.authenticate(name, password)
       if user = find_by(name: name)
         if user.hashed_password == encrypt_password(password, user.salt)
           user
@@ -108,7 +108,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     git show v1.0
     git push origin v1.0
 
-## use Turbolinks and NProgress 
+## use Turbolinks and NProgress
     gem 'turbolinks'
     gem 'nprogress-rails'
     gem 'jquery-turbolinks'
@@ -118,7 +118,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     //= require jquery_ujs
 
 ## support emoji new topic
-The default matcher for compiling files includes application.js, application.css and all non-JS/CSS files (this will include all image assets automatically) from app/assets folders 
+The default matcher for compiling files includes application.js, application.css and all non-JS/CSS files (this will include all image assets automatically) from app/assets folders
 
 procompile asset pipeline locally
 config/environments/development.rb
@@ -129,4 +129,7 @@ config/environments/development.rb
     # to totally clean
     $ rake assets:clobber
 
+## change to new heroku name
 
+    $ git remote rm heroku
+    $ heroku git:remote -a newname
