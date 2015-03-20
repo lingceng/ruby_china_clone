@@ -7,22 +7,25 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply.topic, notice: 'Replied Successfully.' }
+        format.html {
+          redirect_to topic_url(@reply.topic, anchor: dom_id(@reply)),
+            notice: 'Replied Successfully.'
+        }
       else
         format.html { redirect_to @reply.topic, notice: 'Replied Failed.' }
       end
     end
- 
   end
 
   private
-    def reply_params
-      params.permit(:content, :topic_id)
-    end
 
-    def check_signin
-      redirect_to sign_in_path unless session[:username]
-    end
+  def reply_params
+    params.permit(:content, :topic_id)
+  end
+
+  def check_signin
+    redirect_to sign_in_path unless session[:username]
+  end
 
 
 end

@@ -2,27 +2,25 @@
 Implement features in RubyChina to Study
 
 [DEMO]( http://ruby-china-clone.herokuapp.com/)
-
 [Guide](http://railscasts-china.com/episodes/kevin-open-class)
-
 [Source]( https://github.com/lingceng/ruby_china_clone.git )
 
 # setup
-  # install postgresql if hava not installed
-  $ gem install bundler
 
-  $ sudo apt-get install libpq-dev
-  $ gem install pg
-  $ bundle install
+    # install postgresql if hava not installed
+    $ gem install bundler
 
-  $ sudo apt-get install nodejs
+    $ sudo apt-get install libpq-dev
+    $ gem install pg
+    $ bundle install
 
-  # edit `pg_hba.conf'
-  # local all postgres md5
-  $ rake db:setup
+    $ sudo apt-get install nodejs
+
+    # edit `pg_hba.conf'
+    # local all postgres md5
+    $ rake db:setup
 
   $ rails s
-
 
 ## postgresql
 https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-postgres
@@ -40,6 +38,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     postsql=# select rolname from pg_roles;
 
 ## setup
+
     $ rails new ruby_china_clone --database=postgresql
     $ rake db:setup
     $ add gem "haml" to Gemfile and `bundle install`
@@ -53,6 +52,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     $ git remote set-url origin git@github.com:lingceng/ruby_china_clone.git
 
 ## heroku
+
     $ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
     $ heroku login
     $ heroku create
@@ -67,6 +67,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
 
 
 ## rails-vim
+
     # create nodes controller
     :Rcontroller nodes!
 
@@ -77,10 +78,12 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     :RDview ui/topics.html.haml
 
 ## rails command
+
     $ rails g migration create_user
     $ rake db:migrate
 
 ## paginate
+
     gem 'will_paginate', '~> 3.0.5'
     gem 'will_paginate-bootstrap', '~> 1.0.0'
 
@@ -91,6 +94,7 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
 ## password
+
     def self.authenticate(name, password)
       if user = find_by(name: name)
         if user.hashed_password == encrypt_password(password, user.salt)
@@ -102,13 +106,16 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     def self.encrypt_password(password, salt)
       Digest::SHA256.hexdigest(password + 'lingceng' + salt);
     end
+
 ## git tag
+
     git tag
     git tag -a v1.0
     git show v1.0
     git push origin v1.0
 
 ## use Turbolinks and NProgress
+
     gem 'turbolinks'
     gem 'nprogress-rails'
     gem 'jquery-turbolinks'
@@ -118,10 +125,11 @@ https://www.digitalocean.com/community/articles/how-to-setup-ruby-on-rails-with-
     //= require jquery_ujs
 
 ## support emoji new topic
-The default matcher for compiling files includes application.js, application.css and all non-JS/CSS files (this will include all image assets automatically) from app/assets folders
+The default matcher for compiling files includes application.js, application.css
+and all non-JS/CSS files (this will include all image assets automatically)
+from app/assets folders
 
-procompile asset pipeline locally
-config/environments/development.rb
+procompile asset pipeline locally config/environments/development.rb
 
     config.assets.prefix = "/dev-assets"
     # precompile

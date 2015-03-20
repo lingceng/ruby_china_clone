@@ -1,12 +1,15 @@
 %section#show_topic
-  %section#topic_banner.box.info-box
-    %h1= @topic.title
-    %p.topic_info
-      = link_to @topic.node.name, node_path(@topic.node), class: "node"
-      %span= "  •  "
-      = link_to @topic.user.name, user_path(@topic.user), class: "user_link"
-      %span= "  •  "
-      published #{time_ago_in_words(@topic.created_at)} ago
+  %section#topic_banner.box.info-box.row
+    %a.col-md-1(href="")
+      %img(src="#{gravatar_url(@topic.user.email)}")
+    %article.col-md-11
+      %h1= @topic.title
+      %p.topic_info
+        = link_to @topic.node.name, node_path(@topic.node), class: "node"
+        %span= "  •  "
+        = link_to @topic.user.name, user_path(@topic.user), class: "user_link"
+        %span= "  •  "
+        published #{time_ago_in_words(@topic.created_at)} ago
   %section#topic_content.box
     = format_content @topic.content
 
@@ -16,16 +19,16 @@
   %section#replies.box
     %ul
       - current_replies = @topic.replies.paginate(page: params[:page], per_page: 10)
-      - current_replies.each do |reply| 
-        %li
+      - current_replies.each do |reply|
+        %li[reply]
           %a.col-md-1(href="")
             %img(src="#{gravatar_url(reply.user.email)}")
-          %article.col-md-8
+          %article.col-md-11
             = link_to reply.user.name, user_path(reply.user), class: "user_link"
             %span replied #{time_ago_in_words(reply.created_at)} ago
             = format_content reply.content
 
-    %div{style: 'margin: 0px 5px'}= will_paginate current_replies, renderer: BootstrapPagination::Rails, class: 'pull-right'       
+    %div{style: 'margin: 0px 5px'}= will_paginate current_replies, renderer: BootstrapPagination::Rails, class: 'pull-right'
 
   %section#reply.box
     = form_tag replies_path, method: :post, html: { class: "form-horizontal" } do
@@ -45,6 +48,6 @@
         %input(type="submit" value="提交回复" class="btn btn-primary")
       .mt10
         = render "content_tip"
-           
+
 = render partial: "shared/sidebar"
 
